@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dbgirl
+    username: root
+    password: root
+  jpa:
+    hibernate:
+    #使用create  每次会删掉表里数据重新创建；
+    #update只会新增或修改；
+    #none 无操作；
+    #create-drop会在应用停下时删掉表里数据；
+    #validate 校验类里的属性与表结构是否一致，不一致会报错 但不会做操作
+      ddl-auto: update
+    show-sql: true
